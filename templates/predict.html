@@ -1,0 +1,126 @@
+{% extends 'base.html' %} {% block head %}
+<title>Predict</title>
+{% endblock %} {% block body %}
+<div class="container">
+  <h1 class="text-center mt-4">Predict House Prices</h1>
+  <p class="text-center text-muted">
+    Enter the property details below to predict the median house value.
+  </p>
+
+  <!-- Prediction Form -->
+  <form method="POST" class="mt-5">
+    <div class="row">
+      <!-- longitude -->
+      <div class="col-md-6">
+        <label for="longitude" class="form-label">Longitude</label>
+        <input
+          type="number"
+          step="any"
+          class="form-control"
+          id="longitude"
+          name="longitude"
+          required
+        />
+      </div>
+      <!-- latitude -->
+      <div class="col-md-6">
+        <label for="latitude" class="form-label">Latitude</label>
+        <input
+          type="number"
+          step="any"
+          class="form-control"
+          id="latitude"
+          name="latitude"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <!-- housingMedianAge -->
+      <div class="col-md-6">
+        <label for="housingMedianAge" class="form-label"
+          >Housing Median Age</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="housingMedianAge"
+          name="housingMedianAge"
+          required
+        />
+      </div>
+      <!-- totalRooms -->
+      <div class="col-md-6">
+        <label for="totalRooms" class="form-label">Total Rooms</label>
+        <input
+          type="number"
+          class="form-control"
+          id="totalRooms"
+          name="totalRooms"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <!-- totalBedrooms -->
+      <div class="col-md-6">
+        <label for="totalBedrooms" class="form-label">Total Bedrooms</label>
+        <input
+          type="number"
+          class="form-control"
+          id="totalBedrooms"
+          name="totalBedrooms"
+          required
+        />
+      </div>
+      <!-- population -->
+      <div class="col-md-6">
+        <label for="population" class="form-label">Population</label>
+        <input
+          type="number"
+          class="form-control"
+          id="population"
+          name="population"
+          required
+        />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <!-- households -->
+      <div class="col-md-6">
+        <label for="households" class="form-label">Households</label>
+        <input
+          type="number"
+          class="form-control"
+          id="households"
+          name="households"
+          required
+        />
+      </div>
+      <!-- medianIncome -->
+      <div class="col-md-6">
+        <label for="medianIncome" class="form-label">Median Income</label>
+        <input
+          type="number"
+          step="any"
+          class="form-control"
+          id="medianIncome"
+          name="medianIncome"
+          required
+        />
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="text-center mt-4">
+      <button type="submit" class="btn btn-success btn-lg">Predict</button>
+    </div>
+  </form>
+  {% if error %}
+  <div class="alert alert-danger">{{ error }}</div>
+  {% endif %}
+</div>
+{% endblock %}
